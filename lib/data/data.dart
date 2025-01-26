@@ -5,11 +5,11 @@ import 'package:portfolio/models/project_model.dart';
 Color kGradient1 = Colors.purple;
 Color kGradient2 = Colors.pinkAccent;
 
-String imagePath = "images/aditya.jpeg";
+String imagePath = "images/nadim.jpg";
 
 //String data to modify
-String name = "Your Name";
-String username = "flutterroles";
+String name = "Nadim Ansari";
+String username = "nadim.ansari.code@gmail.com";
 
 //Link to resume on Google Drive
 String resumeLink =
@@ -19,40 +19,57 @@ String resumeLink =
 String contactEmail = "mail@adityathakur.in";
 
 String aboutWorkExperience = '''
-Hello I am a freelancer
-
-He has previously been a speaker at the Flutter Global Summit'21, Flutter Vikings and events across colleges, universities (like VIT Chennai, Vellore, MIT-ADT), and clubs (IEEE APSIT, SFIT, GirlScript, GeeksforGeeks Student Chapter, Google CrowdSource, and more) here in India. 
+I am a Mobile Application Developer with 5 years of experience building and optimizing Android and iOS applications for both mobile and tablet platforms. With expertise in Flutter and Native Android, I specialize in delivering high-performance, user-focused solutions. I am excited to join an innovative tech company where I can leverage my skills and contribute to developing cutting-edge mobile applications. 
 ''';
 
 String aboutMeSummary = '''
-Aditya is a content creator and has over 5K subscribers on YouTube and a 700+ member community on Discord. 
-📺 YouTube Channel: watch.adityathakur.in
+I am mobile application developer. who builds apps in Flutter and Native Android. 
+📺 YouTube Channel: https://www.linkedin.com/in/nadimans/
 🚀 Discord Community: discord.adityathakur.in
 ''';
 
-String location = "Dharamshala, India";
-String website = "adityathakur.in";
-String portfolio = "adityathakurxd";
-String email = "mail@adityathakur.in";
+String location = "Ahmedabad, India";
+String mobileNumber = "7600384037";
+String email = "nadim.ansari.code@gmail.com";
 
 List<Project> projectList = [
   Project(
-      name: "Shades",
+      name: "Zizle",
       description:
-          "Winner IEEE Mandi 'Go Online' Challenge at Electrothon, NIT Hamirpur.",
-      link: "https://github.com/adityathakurxd/shades"),
+          "Zizle is a social networking app built in Flutter for Android and iOS, utilizing Bloc for state management.",
+      link: "https://www.zizle.com/"),
   Project(
-      name: "Fiasco",
+      name: "PrepDoctor",
       description:
-          "Fiasco is one stop solution to help you manage Family expenses in one place!",
-      link: "https://github.com/adityathakurxd/fiasco"),
+          "Developing an app that allows doctors to prepare for and take various types of exams, featuring real-time results, progress tracking, and customizable learning resources.",
+      link: "https://ca.prepdoctors.com/"),
   Project(
-      name: "Fiasco",
+      name: "Teether",
       description:
-          "Fiasco is one stop solution to help you manage Family expenses in one place!",
-      link: "https://github.com/adityathakurxd/fiasco"),
+          "We have developed a suite of Flutter applications for the medical sector, enhancing patient appointment management workflows, resulting in a streamlined patient experience across three clinics.",
+      link: "https://www.helloteether.com/"),
   Project(
-      name: "Flutter Portfolio",
-      description: "A template for Portfolio",
-      link: "https://github.com/adityathakurxd/flutter-portfolio")
+    name: "Pawfect Pet Sitter",
+    description:
+        "We have created an innovative mobile application for pet sitting, integrating GPS tracking and real-time messaging features.",
+    link: "https://www.pawfectpetsitter.com/services/",
+  ),
+  Project(
+    name: "Bolt Spec",
+    description:
+        "An Android app that allows users to add equipment by scanning NFC tags, managing their equipment, offering equipment for rent, and generating necessary documents.",
+    link: "https://www.bolt-spec.com/",
+  ),
+  Project(
+    name: "Spot Counting",
+    description:
+        "An Android app that uses CameraX to count red and blue spots, validate spot mixing, and calculate CHI distributions and CHI-square values.",
+    link: "",
+  ),
+  Project(
+    name: "Quiqle",
+    description:
+        "Android app to plan your event, add event location and time, view location in map through Mapbox and chat feature through PUBNUB.",
+    link: "",
+  )
 ];

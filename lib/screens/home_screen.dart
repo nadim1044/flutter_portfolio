@@ -11,29 +11,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Row(
-          children: [
-            Icon(
-              Icons.circle_sharp,
-              size: 12,
-              color: Colors.black,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              "Untitled UI",
-              style: TextStyle(color: Colors.black),
-            )
-          ],
-        ),
-        // foregroundColor: Colors.black,
-        backgroundColor: Colors.white,
-      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
@@ -66,7 +47,7 @@ class HomeScreen extends StatelessWidget {
             )),
             Center(
                 child: Text(
-              "@$username",
+              username,
               style: kSubTitleText,
             )),
             const SizedBox(
@@ -155,7 +136,7 @@ class HomeScreen extends StatelessWidget {
                                   color: Colors.white,
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        vertical: 20, horizontal: 40),
+                                        vertical: 20, horizontal: 10),
                                     child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
@@ -185,7 +166,7 @@ class HomeScreen extends StatelessWidget {
                                             height: 10,
                                           ),
                                           Text(
-                                            "Website",
+                                            "Whatsapp",
                                             style: kSubTitleText,
                                           ),
                                           const SizedBox(
@@ -193,29 +174,7 @@ class HomeScreen extends StatelessWidget {
                                           ),
                                           Row(
                                             children: [
-                                              Text(website),
-                                              const SizedBox(
-                                                width: 5,
-                                              ),
-                                              const Icon(
-                                                Icons.launch,
-                                                size: 16,
-                                              )
-                                            ],
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            "Portfolio",
-                                            style: kSubTitleText,
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Text(portfolio),
+                                              Text(mobileNumber),
                                               const SizedBox(
                                                 width: 5,
                                               ),
@@ -285,7 +244,7 @@ class HomeScreen extends StatelessWidget {
                                 color: Colors.white,
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
-                                      vertical: 20, horizontal: 40),
+                                      vertical: 20, horizontal: 10),
                                   child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -315,7 +274,7 @@ class HomeScreen extends StatelessWidget {
                                           height: 10,
                                         ),
                                         Text(
-                                          "Website",
+                                          "Whatsapp",
                                           style: kSubTitleText,
                                         ),
                                         const SizedBox(
@@ -323,29 +282,7 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                         Row(
                                           children: [
-                                            Text(website),
-                                            const SizedBox(
-                                              width: 5,
-                                            ),
-                                            const Icon(
-                                              Icons.launch,
-                                              size: 16,
-                                            )
-                                          ],
-                                        ),
-                                        const SizedBox(
-                                          height: 10,
-                                        ),
-                                        Text(
-                                          "Portfolio",
-                                          style: kSubTitleText,
-                                        ),
-                                        const SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Text(portfolio),
+                                            Text(mobileNumber),
                                             const SizedBox(
                                               width: 5,
                                             ),
@@ -389,21 +326,39 @@ class HomeScreen extends StatelessWidget {
                       ),
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             Center(
               child: SizedBox(
-                  width: context.screenConstraint().width * 0.8,
-                  child: GridView.builder(
-                      shrinkWrap: true,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                width: context.screenConstraint().width * 0.8,
+                child: context.screenConstraint().width < 501
+                    ? ListView.builder(
+                        physics: NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) => Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: ProjectWidget(
+                            projectData: projectList[index],
+                          ),
+                        ),
+                        itemCount: projectList.length,
+                      )
+                    : GridView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          childAspectRatio:
-                              context.screenConstraint().width > 1000 ? 3 : 2),
-                      itemCount: projectList.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return ProjectWidget(
-                          projectData: projectList[index],
-                        );
-                      })),
+                          childAspectRatio: 1.1,
+                        ),
+                        itemCount: projectList.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return ProjectWidget(
+                            projectData: projectList[index],
+                          );
+                        },
+                      ),
+              ),
             ),
           ],
         ),
